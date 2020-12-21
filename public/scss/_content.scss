@@ -1,0 +1,19 @@
+.content{
+    pre{
+       background-color: rgba(242, 242, 242, 1);
+       padding:1em;
+    }
+    ul{
+        display: block; list-style-type: disc; margin-top: 1em; margin-bottom: 1 em; margin-left: 0; margin-right: 0; padding-left: 40px;
+    }
+    ol{
+        display: block;
+        list-style-type: decimal;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 40px;
+    }
+
+}

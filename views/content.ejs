@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/reset.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+  <link rel='stylesheet' href='/stylesheets/all.css' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css'/>
+  <title>黑飄的家</title>
+</head>
+<body>
+  <%- include('./layout/content-header') %>
+  <div class="container p-5 content layout-card mt-5">
+    <div class="description mb-3 text-muted px-2"><%= post.Description %></div>
+    <%- post.Content %>
+  </div>
+  <%- include('./layout/footer'); %>
+</body>
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/all.js"></script>
+</html>

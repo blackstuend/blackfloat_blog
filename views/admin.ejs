@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/reset.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+  <link rel='stylesheet' href='/stylesheets/all.css' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css'/>
+  <title>黑飄的家</title>
+</head>
+<body>
+    <div class="container">
+        <form action="/admin/post" method="post">
+            <div class="form-group">
+                <label for="Title">Title</label>
+                <input type="text" id="Title" class="form-control" name='Title'>
+            </div>
+            <div class="form-group">
+                <label for="Tags">Tags</label>
+                <input type="text" id="Tags" class="form-control" name='Tags'>
+            </div>
+            <div class="form-group">
+                <label for="Categories">Categories</label>
+                <input type="text" id="Categories" class="form-control" name="Categories">
+            </div>
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <textarea name="Description" id="Description" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="Content">Content</label>
+                <textarea name="Content" id="Content" cols="30" rows="30" class="form-control"></textarea>
+            </div>
+            <button type="submit" class='btn btn-primary'>提交</button>
+        </form>
+
+    </div>
+</body>
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/all.js"></script>
+</html>

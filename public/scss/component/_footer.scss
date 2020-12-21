@@ -1,0 +1,34 @@
+.footer{
+    background-color: $primary;
+    text-align: center;
+    color:#fff;
+    padding:3em;
+    a{
+        color:#fff;
+    }
+}
+.footer-text{
+    margin-bottom:.8em;
+}
+
+.up_arrow{
+    width: 30px;
+    background-color: $primary;
+    color:white;
+    height: 30px;
+    display: block;
+    position: fixed;
+    transform: translateX(30px);
+    right:0;
+    bottom:30px;
+    text-align: center;
+    line-height: 30px;
+    transition: all .2s;
+    &:hover{
+        background-color: orange;
+        color:white;
+    }
+    &.up_arrow-show{
+        transform: translateX(0px);
+    }
+}

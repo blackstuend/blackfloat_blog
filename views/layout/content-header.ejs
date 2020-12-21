@@ -1,0 +1,45 @@
+
+<div class="header-side">
+    <div class="header-side-img p-5">
+        <img src="/images/myphoto.png" alt="">
+    </div>
+    <ul class="header-side-nav px-5">
+        <li class="header-side-nav-item"><a href="/"><i class="fas fa-home"></i>Home</a></li>
+        <li class="header-side-nav-item"><a href="/Archive"><i class="fas fa-archive"></i>Archive</a></li>
+        <li class="header-side-nav-item"><a href="/Categories"><i class="fas fa-folder-open"></i>Categories</a></li>
+        <li class="header-side-nav-item"><a href="/Link"><i class="fas fa-link"></i>Link</a></li>
+    </ul>
+</div>
+
+
+
+
+<div class="header bg-cover"  style="background-image: url(https://images.pexels.com/photos/3568792/pexels-photo-3568792.jpeg?cs=srgb&dl=pexels-kaique-rocha-3568792.jpg&fm=jpg);">
+    <div class="header-nav justify-content-between">
+        <div class="header-nav-brand h1" href="/">
+            <a href="/">BlackFloat</a>   
+        </div>
+        <ul class="header-nav-links">
+            <li class="header-nav-item"><a href="/"><i class="fas fa-home"></i>Home</a></li>
+            <li class="header-nav-item"><a href="/Archive"><i class="fas fa-archive"></i>Archive</a></li>
+            <li class="header-nav-item"><a href="/Categories"><i class="fas fa-folder-open"></i>Categories</a></li>
+            <li class="header-nav-item"><a href="/Link"><i class="fas fa-link"></i>Link</a></li>
+        </ul>
+        <a class="header-nav-sidebar" href="#"><i class="fas fa-bars"></i></a>
+    </div>
+    <div class="header-post mx-auto container">
+        <div class="tags">
+            <% for(var tag of post.Tags){ %>
+                <a href='#' class="badge badge-pill badge-transparent tag px-2 py-1 mr-2"></i><%= tag %></a>
+            <% } %>
+        </div>
+        <h1 class="header-post-title mt-2"><%= post.Title %></h1>
+        <div class="header-post-date">
+            <div class="text-color mb-3"><small>
+                <i class="fas fa-calendar-alt mr-2"></i>
+                 <%= post.UpDate.getFullYear() %>-<%= post.UpDate.getMonth() %>-<%= post.UpDate.getDate() %>
+              </small></div>
+        </div>
+    </div>
+</div>
+

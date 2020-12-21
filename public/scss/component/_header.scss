@@ -1,0 +1,142 @@
+// Header
+// sidebar
+// rwd
+// animate header nav 
+// header on content 
+.header{
+    height: 400px;
+    z-index:1;
+    color:#fff;
+    a{
+        color:#fff;
+        display:block;
+    }
+    position: relative;
+}
+.header-nav-brand{
+    font-weight: bold;
+    font-size:25px;
+}
+.header-nav{
+    transition: all .5s ease;
+    display:flex;
+    align-items: center;
+    background-color: transparent;
+    padding:1em 2em;
+}
+.header-nav-links{
+    display:flex;
+    margin-bottom: 0;
+    .header-nav-item{
+        margin-left:1em;
+        i{
+            margin-right:0.3em;
+        };
+        &:hover{
+            border-bottom:3px solid $primary;
+        }
+    }
+}
+.header-topics{
+    position: absolute;
+    top:55%;
+    text-align: center;
+    font-size:2em;
+    font-weight: bold;
+    width: 100%;
+}
+
+
+
+.header-nav-sidebar{
+    display:none !important;
+
+}
+
+//sidebar off-canvas right
+.header-side{
+    position: fixed;
+    top:0;
+    bottom:0;
+    width: 300px;
+    right:0;
+    height: 100%;
+    background-color: #f6f6f6;
+    transform: translateX(300px);
+    transition: transform ease-out .5s;
+    z-index: 5;
+    &.header-side-show{
+        transform: translateX(0); 
+    }
+}
+.header-side-img{
+    text-align: center;
+    width: 100%;
+    img{
+        width: 150px;
+        height: 150px;
+        border-radius: 15em;
+    }
+}
+
+
+.header-side-nav{
+    font-size:20px
+}
+.header-side-nav-item{
+    height: 44px;
+    width: 100%;
+    a{
+        color:#000;
+        display:block;
+    }
+    i{
+        margin-right:3em;
+    }
+    &:hover a{
+        color: #339af0;
+    }
+}
+
+
+// rwd
+@media (max-width:767px){
+    .header-nav-links{
+        display:none ;
+    }
+    .header-nav-brand{
+        line-height: 44px;
+        height: 44px;
+    }
+    .header-nav-sidebar{
+        line-height: 44px;
+        text-align: center;
+        display:block !important;
+        height: 44px;
+        width:44px;
+        font-size:20px;
+    }
+}
+
+
+// 往下滑時的樣式
+.header-nav-down{
+    background-color: rgba(255,255,255,0.8) !important;
+    color: #4c4948!important;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
+    a{
+        color:#4c4948!important;   
+    }
+}
+
+.header-post{
+    padding:60px 50px 80px 50px;
+}
+
+.header-post-title{
+    font-weight: bold;
+}

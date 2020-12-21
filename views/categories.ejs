@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/reset.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+  <link rel='stylesheet' href='/stylesheets/all.css' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css' />
+  <title>黑飄的家</title>
+</head>
+
+<body>
+  <%- include('./layout/header',{place:"Categories"}); %>
+  <div class="container my-5 bg-litte-white">
+    <div class="row">
+      <div class="contents col-md-9 ">
+        <div class="categories mb-3 ml-3 d-flex">
+          <% var cate_sum = 0; %>
+          <% for(categorie of categories){ %>
+            <button type="button" class="btn btn-outline-info btn-hover categorie order-2 mr-2" data-categories = "<%= categorie._id %>" ><%= categorie._id %>
+              <span class="badge badge-primary badge-primary-hover"><%= categorie.sum %></span>
+            </button>
+            <% cate_sum += categorie.sum %>
+          <% } %>
+          <button type="button" class="btn btn-outline-info btn-hover categorie order-1 mr-2 active" data-categories ="All">All
+            <span class="badge badge-primary badge-primary-hover"><%= cate_sum %></span>
+          </button>
+        </div>
+        <div class="layout-card p-5">
+          <h2 class="Categories_Topics text-info">All</h2>
+          <% for(let post of posts){ %>
+          <a class="layout-item mt-3 ml-4 d-block text-dark categories-posts d-none" href="/content/<%= post._id %>" data-categories="<%= post.Categories %>">
+            <div class="h5 m-0"><%= post.Title %></div>
+            <div class="layout-card-time">
+              <small><%= post.UpDate.getFullYear() %>-<%= post.UpDate.getMonth() %>-<%= post.UpDate.getDate() %></small>
+            </div>
+            <div class="layout-card-description text-muted text-overflow-1 ml-3">
+              <%= post.Description %>
+            </div>
+            <hr>
+          </a>
+          <% } %>
+        </div>
+      </div>
+      <div class="about col-md-3 d-none d-md-block">
+        <div class="layout-card text-center">
+          <img src="/images/myphoto.png" alt="" width="110px" height="110px">
+          <div class="layout-card-title">BlackFloat</div>
+          <div class="mb-3 layout-card-title">Web junior</div>
+          <ul class="d-flex justify-content-center">
+            <li><a href="lin110510533@gmail.com" class="text-muted mr-2 text-hover-primary"><i
+                  class="fas fa-envelope fa-2x"></i></a></li>
+            <li><a href="https://github.com/blackstuend" class="text-muted text-hover-primary"><i
+                  class="fab fa-github fa-2x"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100007032816545"
+                class="text-muted text-hover-primary"><i class="fab fa-2x fa-facebook ml-2"></i></a></li>
+          </ul>
+        </div>
+        <div class="layout-card p-4 mb-3">
+          <div class="mb-2 text-primary">
+            <i class="fas fa-book-open mr-2"></i><span>Now Post</span>
+          </div>
+          <% for(post of posts){ %>
+          <a class=" mb-2 d-block bg-hover-primary px-3 py-1 text-black" href='/content/<%= post._id %>'>
+            <div class="mb-0 bg-hover-primary"><%= post.Title %></div>
+            <small
+              class="text-mute"><%= post.UpDate.getFullYear() %>-<%= post.UpDate.getMonth() %>-<%= post.UpDate.getDate() %></small>
+          </a>
+          <% } %>
+        </div>
+        <div class="layout-card p-4 mb-3">
+          <div class="mb-2 text-info">
+            <i class="fas fa-folder-open mr-2 "></i><span class="text-15">Categories</span>
+          </div>
+          <% for(categorie of categories){ %>
+          <a class=" mb-2 d-block px-3 d-flex text-black bg-hover-info px-3 py-1" href='#'>
+            <span class="mr-auto"><%= categorie._id %></span>
+            <span><%= categorie.sum %></span>
+          </a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <%- include('./layout/footer'); %>
+</body>
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/all.js"></script>
+
+</html>

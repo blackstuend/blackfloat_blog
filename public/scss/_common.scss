@@ -1,0 +1,114 @@
+*{
+    $font-family-sans-serif:
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for OS X (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  "Roboto",
+  // Basic web fallback
+  "Helvetica Neue", Arial, sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+}
+a:hover{
+  text-decoration: none;
+}
+.bg-cover{
+    background-size: cover;
+    background-position: center center;
+}
+
+.body-overflow-none{
+  overflow: hidden;
+}
+.bg-litte-white{
+  background-color: #fdfdfd;
+}
+
+.text-overflow-1{
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.text-overflow{
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.text-hover-primary:hover{
+  color:$primary !important; 
+}
+
+.bg-hover-primary
+{
+  &:hover{
+    background-color: $primary !important;
+    transition: all .3s;
+    color:white !important;
+  }
+  &:hover small{
+    background-color: $primary !important;
+    transition: all .3s;
+    color:white !important;
+  }
+}
+
+
+
+.text-mute{
+  color:#6c757d ;
+}
+
+.bg-hover-green:hover{
+  background-color: #00c4b6 !important;
+  transition: all .5s;
+  color:white !important;
+}
+
+.bg-hover-info:hover{
+  background-color: #17a2b8 !important;
+  transition: all .5s;
+  color:white !important;
+}
+.text-black{
+  color:black;
+}
+.text-15{
+  font-size:15px;
+}
+
+.badge-transparent{
+  color:white;
+  background-color: transparent;
+  border:1px solid white;
+  &:hover{
+    background-color: #6c757d;
+  }
+}
+
+.tags{
+  font-size:12px;
+  .tag{
+      display:inline-block;
+  }
+}
+
+
+.btn-hover:hover .badge-primary-hover{
+  color:$primary !important;
+  background-color: white !important;
+}
+
+.btn-hover.active .badge-primary-hover{
+  color:$primary !important;
+  background-color: white !important;
+}
