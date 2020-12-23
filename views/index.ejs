@@ -42,7 +42,7 @@
                 <li class="page-item bg-hover-green"><a class="page-link bg-hover-green" href="/page/<%= i %>"><%= i %></a></li>
               <% } %> 
             <% } %>
-            <% if(NowPage != needPage ) { %>
+            <% if(NowPage != needPage && needPage != 0) { %>
               <a class="page-link bg-hover-green" href="/page/<%= NowPage+1 %>" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 <span class="sr-only">Next</span>

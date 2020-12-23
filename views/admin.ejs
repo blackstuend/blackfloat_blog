@@ -1,44 +1,96 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/reset.css">
-  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
-  <link rel='stylesheet' href='/stylesheets/all.css' />
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css'/>
-  <title>黑飄的家</title>
-</head>
-<body>
-    <div class="container">
-        <form action="/admin/post" method="post">
-            <div class="form-group">
-                <label for="Title">Title</label>
-                <input type="text" id="Title" class="form-control" name='Title'>
-            </div>
-            <div class="form-group">
-                <label for="Tags">Tags</label>
-                <input type="text" id="Tags" class="form-control" name='Tags'>
-            </div>
-            <div class="form-group">
-                <label for="Categories">Categories</label>
-                <input type="text" id="Categories" class="form-control" name="Categories">
-            </div>
-            <div class="form-group">
-                <label for="Description">Description</label>
-                <textarea name="Description" id="Description" cols="30" rows="10" class="form-control"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="Content">Content</label>
-                <textarea name="Content" id="Content" cols="30" rows="30" class="form-control"></textarea>
-            </div>
-            <button type="submit" class='btn btn-primary'>提交</button>
-        </form>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/all.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css' />
+    <title>黑飄的家</title>
+</head>
+
+<body>
+
+    <div class="panel">
+        <a class="panel-brand text-white" href="/admin">Blackfloat</a>
+        <a class="panel-item text-white" href="/admin/account">Account</a>
+    </div>
+    <div class="panel-container">
+        <div class="d-flex justify-content-between mb-3">
+            <h1 class="text-info mb-3">Posts</h1>
+            <a class="btn btn-info mr-5 align-self-center" href="/admin/post/newpost"><i class="fas fa-plus mr-2"></i>New
+                Post</a>
+        </div>
+        <% for(post of posts){ %>
+        <div class="layout-card p-5 mb-5 text-dark d-flex justify-content-between">
+            <div>
+                <a class="h3 text-dark d-block" href="/content/<%= post._id %>"><%= post.Title %></a>
+                <div class="text-muted mb-3"><small>
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Create
+                        <%= post.UpDate.getFullYear() %>-<%= post.UpDate.getMonth() %>-<%= post.UpDate.getDate() %>
+                    </small></div>
+                <p class="description text-left text-overflow"><%= post.Description %></p>
+            </div>
+            <div class="d-flex flex-column justify-content-between">
+                <a class="btn btn-success" href='/admin/post/update/<%= post._id %>'>Update</a>
+                <button class="btn btn-danger mt-5 admin-delete" data-link="<%= post._id %>" >Delete</button>
+            </div>
+        </div>
+        <% } %>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <% if(NowPage != 1) { %>
+                    <a class="page-link bg-hover-green  " href="/admin/<%= NowPage-1 %>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <% } %>
+                </li>
+                <% for(let i=1;i<=needPage;i++){ %>
+                <% if(i == NowPage){ %>
+                <li class="page-item active"><a class="page-link " href="/admin/<%= i %>"><%= i %></a></li>
+                <% }else{ %>
+                <li class="page-item bg-hover-green"><a class="page-link bg-hover-green"
+                        href="/admin/<%= i %>"><%= i %></a></li>
+                <% } %>
+                <% } %>
+                <% if(NowPage != needPage ) { %>
+                <a class="page-link bg-hover-green" href="/admin/<%= NowPage+1 %>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+                <% } %>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="modal" tabindex="-1" role="dialog" id="DeleteModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure to delete?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-primary modal-delete-sure">Yes</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script src="/javascripts/jquery.js"></script>
 <script src="/javascripts/bootstrap.min.js"></script>
 <script src="/javascripts/all.js"></script>
+<script src="/javascripts/admin.js"></script>
+
 </html>

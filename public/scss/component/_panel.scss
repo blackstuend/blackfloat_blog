@@ -1,0 +1,40 @@
+.panel{
+    position: fixed;
+    width: 250px;
+    top:0;
+    left:0;
+    bottom:0;
+    background-color:#58a193;
+    color:white;
+    display:flex;
+    flex-direction: column;
+    padding:2em;
+    text-align:center;
+}
+.panel-brand{
+    font-size:30px;
+    text-align:center;
+    color:white;
+    margin-bottom:30px;
+}
+
+.panel-item{
+    margin-bottom:1em;
+    color:white;
+}
+
+.panel-container{
+    transform: translateX(0);
+    padding:3em;
+    max-width: calc(100% - 250px);
+    transform: translateX(250px);
+    margin:0;
+}
+
+
+.panel-delete-body{
+    opacity: 0.6;
+}
+
+
+

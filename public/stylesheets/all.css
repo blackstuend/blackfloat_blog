@@ -103,6 +103,10 @@ a:hover {
   background-color: white !important;
 }
 
+.modal-dialog {
+  margin-top: 200px;
+}
+
 .header {
   height: 400px;
   z-index: 1;
@@ -351,4 +355,58 @@ a:hover {
 
 .archive-item:hover .archive-title {
   color: green !important;
+}
+
+.panel {
+  position: fixed;
+  width: 250px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #58a193;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2em;
+  text-align: center;
+}
+
+.panel-brand {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.panel-item {
+  margin-bottom: 1em;
+  color: white;
+}
+
+.panel-container {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  padding: 3em;
+  max-width: calc(100% - 250px);
+  -webkit-transform: translateX(250px);
+          transform: translateX(250px);
+  margin: 0;
+}
+
+.panel-delete-body {
+  opacity: 0.6;
+}
+
+.login {
+  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }

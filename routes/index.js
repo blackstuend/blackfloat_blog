@@ -11,7 +11,11 @@ router.get('/', async (ctx, next) => {
     var posts = await Post.find({}).sort({UpDate:-1}).skip(0).limit(5)
     // 判斷有幾篇文章
     let sum = await Post.aggregate([{$group : {_id : null, sum : {$sum : 1}}}])
-    let needPage = Math.ceil(sum[0].sum / 5 )
+    let needPage;
+    if(sum.length != 0 )
+      needPage = Math.ceil(sum[0].sum / 5 )
+    else
+      needPage = 0
     //找到categories 的數量
     let categories = await Post.aggregate([{$group : {_id : "$Categories", sum : {$sum : 1}}}]).sort({sum:-1})
     // render post 為貼文 categories 為分類標籤 ,page 為第幾頁 判斷是否需要往左往右!!
@@ -26,7 +30,11 @@ router.get('/page/:page', async (ctx, next) => {
   var posts = await Post.find({}).sort({UpDate:-1}).skip(skip_page).limit(5)
   // 判斷有幾篇文章
   let sum = await Post.aggregate([{$group : {_id : null, sum : {$sum : 1}}}])
-  let needPage = Math.ceil(sum[0].sum / 5 )
+  let needPage;
+  if(sum.length != 0 )
+    needPage = Math.ceil(sum[0].sum / 5 )
+  else
+    needPage = 0
   //找到categories 的數量
   let categories = await Post.aggregate([{$group : {_id : "$Categories", sum : {$sum : 1}}}]).sort({sum:-1})
   // render post 為貼文 categories 為分類標籤 ,page 為第幾頁 判斷是否需要往左往右!!
@@ -46,7 +54,6 @@ router.get('/archive',async(ctx,next) =>{
   var archives = await Post.find({}).sort({UpDate:-1})
   var posts = archives.slice(0,5)
   let categories = await Post.aggregate([{$group : {_id : "$Categories", sum : {$sum : 1}}}]).sort({sum:-1})
-  console.log(archives)
   await ctx.render("archive",{posts:posts,categories:categories,archives:archives})
 })
 
@@ -57,6 +64,11 @@ router.get('/categories',async(ctx,next) =>{
   await ctx.render("categories",{posts:posts,categories:categories})
 })
 
+router.get('/About',async(ctx,next) =>{
+  var posts = await Post.find({}).sort({UpDate:-1})
+  let categories = await Post.aggregate([{$group : {_id : "$Categories", sum : {$sum : 1}}}]).sort({sum:-1})
+  await ctx.render("about",{posts:posts,categories:categories})
+})
 
 
 module.exports = router

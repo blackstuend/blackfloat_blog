@@ -16,15 +16,15 @@
   <div class="container my-5 bg-litte-white">
     <div class="row">
       <div class="contents col-md-9 ">
-        <div class="categories mb-3 ml-3 d-flex">
+        <div class="categories mb-3 ml-3 d-flex flex-wrap">
           <% var cate_sum = 0; %>
           <% for(categorie of categories){ %>
-            <button type="button" class="btn btn-outline-info btn-hover categorie order-2 mr-2" data-categories = "<%= categorie._id %>" ><%= categorie._id %>
+            <button type="button" class="btn btn-outline-info btn-hover categorie order-2 mr-2 mb-3" data-categories = "<%= categorie._id %>" ><%= categorie._id %>
               <span class="badge badge-primary badge-primary-hover"><%= categorie.sum %></span>
             </button>
             <% cate_sum += categorie.sum %>
           <% } %>
-          <button type="button" class="btn btn-outline-info btn-hover categorie order-1 mr-2 active" data-categories ="All">All
+          <button type="button" class="btn btn-outline-info btn-hover categorie order-1 mr-2 active mb-3" data-categories ="All">All
             <span class="badge badge-primary badge-primary-hover"><%= cate_sum %></span>
           </button>
         </div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/all.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css' />
+    <title>黑飄的家</title>
+</head>
+
+<body class="panel-active">
+    <div class="panel">
+        <a class="panel-brand text-white" href="/admin">Blackfloat</a>
+        <a class="panel-item text-white" href="/admin/account">Account</a>
+    </div>
+    <div class="panel-container">
+        <div class="d-flex justify-content-between mb-3">
+            <h1 class="text-info mb-3">Account</h1>
+        </div>
+        <div class="container m-0 ">
+            <form action="/admin/account" method="post" id="change_password">
+                <% if(fail){ %>
+                    <div class="alert-danger alert mb-3">Change Password Fail</div>
+                <% } %>
+                <div class="form-group">
+                    <label for="Username">Username</label>
+                    <input type="text" id="Username" class="form-control" name='account' placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Input Origin Password</label>
+                    <input type="password" id="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="New_password">Input New Password</label>
+                    <input type="password" id="new_password" class="form-control" name="new_password" placeholder="New Password">
+                </div>
+                <div class="form-group">
+                    <label for="Re_New_Password">ReInput New Password</label>
+                    <input type="password" id="Re_New_Password" class="form-control"  placeholder="Re input Password">
+                </div>
+                <button type="submit" class='btn btn-primary'>更改密碼</button>
+            </form>
+        </div>
+    </div>
+    
+
+</body>
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/all.js"></script>
+<script src="/javascripts/admin.js"></script>
+
+</html>
