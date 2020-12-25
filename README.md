@@ -1,16 +1,19 @@
 # BLOG
 
 
-其實blog很久以前就有做過，只是一直不太懂css來排版<br>
-於是在最近上了六角學院的線上課程，先學了css與RWD基本的排版<br>
+其實blog很久以前就想做，只是一直不太懂css來排版<br>
+在最近上了六角學院的線上課程，先學了css與RWD基本的排版<br>
 再加上以前上課學的node.js後端的程式<br>
 拼拼湊湊出這個blog
 
+
 [demo](http://35.236.180.209/)
 
-## 功能
-* 基本的blog功能刪除文章，發布文章，更新文章
-
+## 介紹
+* 這是我用來放自己筆記的blog，樣板主要都是看各大別人寫的blog拼湊出來
+* 使用koa-generator生成mvc架構
+* 資料庫已mongodb為主
+* 以scss為主，雖然沒用到什麼function與variable
 
 ## Get start
 * 資料庫使用mongodb所以須先安裝
