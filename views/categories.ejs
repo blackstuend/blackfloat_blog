@@ -62,7 +62,7 @@
           <div class="mb-2 text-primary">
             <i class="fas fa-book-open mr-2"></i><span>Now Post</span>
           </div>
-          <% for(post of posts){ %>
+          <% for(post of new_posts){ %>
           <a class=" mb-2 d-block bg-hover-primary px-3 py-1 text-black" href='/content/<%= post._id %>'>
             <div class="mb-0 bg-hover-primary"><%= post.Title %></div>
             <small

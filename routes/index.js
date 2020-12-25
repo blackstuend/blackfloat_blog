@@ -60,8 +60,9 @@ router.get('/archive',async(ctx,next) =>{
 
 router.get('/categories',async(ctx,next) =>{
   var posts = await Post.find({}).sort({UpDate:-1})
+  var new_posts = posts.slice(0,5)
   let categories = await Post.aggregate([{$group : {_id : "$Categories", sum : {$sum : 1}}}]).sort({sum:-1})
-  await ctx.render("categories",{posts:posts,categories:categories})
+  await ctx.render("categories",{posts:posts,categories:categories,new_posts:new_posts})
 })
 
 router.get('/About',async(ctx,next) =>{
