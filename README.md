@@ -1,0 +1,39 @@
+# BLOG
+
+
+其實blog很久以前就有做過，只是一直不太懂css來排版<br>
+於是在最近上了六角學院的線上課程，先學了css與RWD基本的排版<br>
+再加上以前上課學的node.js後端的程式<br>
+拼拼湊湊出這個blog
+
+[demo](http://35.236.180.209/)
+
+## 功能
+* 基本的blog功能刪除文章，發布文章，更新文章
+
+
+## Get start
+* 資料庫使用mongodb所以須先安裝
+    * [安裝流程](http://35.236.180.209/content/5fe5d53a4d8a12084f2a944e)
+```shell
+$ npm install
+$ npm start 
+```
+
+## 後台
+
+* 目前還沒寫RWD
+* 進到127.0.0.1/admin<br>
+![login](./demo/2020-12-25-211449.jpg)
+* username:admin,password:password即可登入
+* 建議一開始進入先去更改密碼
+* 點擊account即可更改密碼，需先輸入原先密碼password
+![change-password](./demo/2020-12-25-211631.jpg)
+* 回到主頁點擊newpost開始po文<br>
+![post](./demo/2020-12-25-212016.jpg)
+* NewPosts
+    * Title為標題
+    * Tags為標籤每個標籤以","為分別
+    * Description用來描述下面的content
+    * Content 裡面可用markdown的結構或是html來寫
+![post2](./demo/2020-12-25-212229.jpg)
