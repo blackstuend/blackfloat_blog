@@ -107,6 +107,10 @@ a:hover {
   margin-top: 200px;
 }
 
+.post_content img {
+  width: 100%;
+}
+
 .header {
   height: 400px;
   z-index: 1;

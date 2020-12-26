@@ -14,7 +14,9 @@
   <%- include('./layout/content-header') %>
   <div class="container p-5 content layout-card mt-5">
     <div class="description mb-3 text-muted px-2"><%= post.Description %></div>
-    <%- post.Content %>
+    <div class="post_content">
+      <%- post.Content %>
+    </div>
   </div>
   <%- include('./layout/footer'); %>
 </body>
