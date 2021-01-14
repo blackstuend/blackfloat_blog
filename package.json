@@ -23,7 +23,6 @@
     "koa-views": "^6.2.0",
     "md5": "^2.3.0",
     "mongoose": "^5.11.8",
-    "mongoose-auto-increment": "^5.0.1",
     "pm2": "^4.5.1",
     "showdown": "^1.9.1"
   },
