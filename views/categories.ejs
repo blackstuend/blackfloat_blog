@@ -118,20 +118,19 @@
       let href = decodeURI(window.location.href);
       href = href.split("#");
       let categories = href[1];
-      console.log(categories);
       if (categories != undefined) {
         $(`.${categories}`).addClass("active");
         $(`.${categories}`).siblings().removeClass("active");
         let button_categories_name = $(`.${categories}`).attr("data-categories")
         $(".Categories_Topics").text(button_categories_name)
         $(".categories-posts").each(function (index) {
-          let posts_cate_name = $(`.${categories}`).attr("data-categories")
+          let posts_cate_name = $(this).attr("data-categories")
           if (button_categories_name == "All")
-            $(`.${categories}`).addClass("d-block")
+            $(this).addClass("d-block")
           else if (posts_cate_name != button_categories_name)
-            $(`.${categories}`).removeClass("d-block")
+            $(this).removeClass("d-block")
           else
-            $(`.${categories}`).addClass("d-block")
+            $(this).addClass("d-block")
         });
       }
     }
