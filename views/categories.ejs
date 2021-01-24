@@ -46,7 +46,7 @@
                 </div>
                 <div class="layout-card-time">
                   <small>
-                    <%= post.UpDate.getFullYear() %>-<%= post.UpDate.getMonth() %>-<%= post.UpDate.getDate() %>
+                    <%= post.UpDate.getFullYear() %>-<%= post.UpDate.getMonth()+1 %>-<%= post.UpDate.getDate() %>
                   </small>
                 </div>
                 <div class="layout-card-description text-muted text-overflow-1 ml-3">
@@ -81,7 +81,7 @@
                   <%= post.Title %>
                 </div>
                 <small class="text-mute">
-                  <%= post.UpDate.getFullYear() %>-<%= post.UpDate.getMonth() %>-<%= post.UpDate.getDate() %>
+                  <%= post.UpDate.getFullYear() %>-<%= post.UpDate.getMonth()+1 %>-<%= post.UpDate.getDate() %>
                 </small>
               </a>
               <% } %>

@@ -20,7 +20,7 @@
             <h3 class="h3"><%= post.Title %></h3>
             <div class="text-muted mb-3"><small>
               <i class="fas fa-calendar-alt mr-2"></i>
-              Create <%= post.UpDate.getFullYear() %>-<%= post.UpDate.getMonth() %>-<%= post.UpDate.getDate() %>
+              Create <%= post.UpDate.getFullYear() %>-<%= post.UpDate.getMonth()+1 %>-<%= post.UpDate.getDate() %>
             </small></div>
             <p class="description text-left text-overflow"><%= post.Description %></p>
           </a>
@@ -70,7 +70,7 @@
           <% for(post of posts){ %>
           <a class=" mb-2 d-block bg-hover-primary px-3 py-1 text-black" href='/content/<%= post._id %>'>
             <div class="mb-0 bg-hover-primary"><%= post.Title %></div>
-            <small class="text-mute"><%= post.UpDate.getFullYear() %>-<%= post.UpDate.getMonth() %>-<%= post.UpDate.getDate() %></small>
+            <small class="text-mute"><%= post.UpDate.getFullYear() %>-<%= post.UpDate.getMonth()+1 %>-<%= post.UpDate.getDate() %></small>
           </a>
           <% } %>
         </div>
